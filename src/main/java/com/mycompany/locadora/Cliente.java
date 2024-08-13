@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.locadora;
 
 /**
@@ -25,7 +21,7 @@ public class Cliente {
     public void adicionaAluguel(Aluguel aluguel) {
         fitasAlugadas.add(aluguel);
     }
-
+    
     public String extrato() {
         final String fimDeLinha = System.getProperty("line.separator");
         double valorTotal = 0.0;
@@ -45,4 +41,3 @@ public class Cliente {
         return resultado.toString();
     }
 }
-

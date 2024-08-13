@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.locadora;
 
 /**
@@ -24,7 +20,7 @@ public class Aluguel {
     public int getDiasAlugada() {
         return diasAlugada;
     }
-
+            
     public double calcularValor() {
         double valorCorrente = 0.0;
         switch(fita.getCódigoDePreço()) {
@@ -46,7 +42,8 @@ public class Aluguel {
         }
         return valorCorrente;
     }
-
+    
+    // Método para calcular o valor do aluguel e pontos de alugador frequente
     public int calcularPontosDeAlugadorFrequente() {
         int pontos = 1;
         if(fita.getCódigoDePreço() == Fita.LANÇAMENTO && diasAlugada > 1) {
