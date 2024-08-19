@@ -4,29 +4,21 @@ package com.mycompany.locadora;
  *
  * @author igor
  */
-public class Fita {
-    public static final int NORMAL = 0;
-    public static final int LANÇAMENTO = 1;
-    public static final int INFANTIL = 2;
+public abstract class Fita {
 
     private String título;
-    private int códigoDePreço;
 
-    public Fita(String título, int códigoDePreço) {
+    public Fita(String título) {
         this.título = título;
-        this.códigoDePreço = códigoDePreço;
     }
 
     public String getTítulo() {
         return título;
     }
+    
+    public abstract double calcularValor(int diasAlugada);
 
-    public int getCódigoDePreço() {
-        return códigoDePreço;
-    }
-
-    public void setCódigoDePreço(int códigoDePreço) {
-        this.códigoDePreço = códigoDePreço;
+    public int calcularPontosDeAlugadorFrequente(int diasAlugada) {
+        return 1; // Padrão é 1 ponto para qualquer fita
     }
 }
-

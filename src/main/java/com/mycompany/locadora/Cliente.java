@@ -17,27 +17,12 @@ public class Cliente {
     public String getNome() {
         return nome;
     }
+    
+    public Collection<Aluguel> getFitasAlugadas() {
+        return fitasAlugadas;
+    }
 
     public void adicionaAluguel(Aluguel aluguel) {
         fitasAlugadas.add(aluguel);
-    }
-    
-    public String extrato() {
-        final String fimDeLinha = System.getProperty("line.separator");
-        double valorTotal = 0.0;
-        int pontosDeAlugadorFrequente = 0;
-        StringBuilder resultado = new StringBuilder("Registro de Alugueis de " + getNome() + fimDeLinha);
-
-        for (Aluguel aluguel : fitasAlugadas) {
-            double valorCorrente = aluguel.calcularValor();
-            pontosDeAlugadorFrequente += aluguel.calcularPontosDeAlugadorFrequente();
-            resultado.append("\t").append(aluguel.getFita().getTítulo()).append("\t").append(valorCorrente).append(fimDeLinha);
-            valorTotal += valorCorrente;
-        }
-
-        resultado.append("Valor total devido: ").append(valorTotal).append(fimDeLinha);
-        resultado.append("Você acumulou ").append(pontosDeAlugadorFrequente).append(" pontos de alugador frequente");
-
-        return resultado.toString();
     }
 }

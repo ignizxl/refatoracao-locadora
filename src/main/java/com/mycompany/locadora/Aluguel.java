@@ -20,37 +20,12 @@ public class Aluguel {
     public int getDiasAlugada() {
         return diasAlugada;
     }
-            
+
     public double calcularValor() {
-        double valorCorrente = 0.0;
-        switch(fita.getCódigoDePreço()) {
-            case Fita.NORMAL:
-                valorCorrente += 2;
-                if(diasAlugada > 2) {
-                    valorCorrente += (diasAlugada - 2) * 1.5;
-                }
-                break;
-            case Fita.LANÇAMENTO:
-                valorCorrente += diasAlugada * 3;
-                break;
-            case Fita.INFANTIL:
-                valorCorrente += 1.5;
-                if(diasAlugada > 3) {
-                    valorCorrente += (diasAlugada - 3) * 1.5;
-                }
-                break;
-        }
-        return valorCorrente;
+        return fita.calcularValor(diasAlugada);
     }
-    
-    // Método para calcular o valor do aluguel e pontos de alugador frequente
+
     public int calcularPontosDeAlugadorFrequente() {
-        int pontos = 1;
-        if(fita.getCódigoDePreço() == Fita.LANÇAMENTO && diasAlugada > 1) {
-            pontos++;
-        }
-        return pontos;
+        return fita.calcularPontosDeAlugadorFrequente(diasAlugada);
     }
 }
-
-
